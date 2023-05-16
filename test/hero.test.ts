@@ -7,7 +7,7 @@ import {
   expect,
 } from 'vitest'
 
-import serverBuilder from '../src/server'
+import buildServer from '../src/server'
 import { mswServer } from '../mocks/hahow-service'
 
 const heroes = [
@@ -84,7 +84,7 @@ const hero1WithProfile = {
 }
 
 function build() {
-  const server = serverBuilder()
+  const server = buildServer()
 
   beforeAll(async () => {
     mswServer.listen()

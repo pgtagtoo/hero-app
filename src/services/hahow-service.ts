@@ -4,7 +4,7 @@ interface Hero {
   image: string;
 }
 
-class HahowHeroService {
+class HahowService {
   constructor() {
   }
 
@@ -45,7 +45,7 @@ class HahowHeroService {
 
 }
 
-const hahowHeroService = new HahowHeroService()
+const hahowHeroService = new HahowService()
 
 export default hahowHeroService
 

@@ -1,5 +1,5 @@
 import fastify, { FastifyReply, FastifyRequest, FastifyInstance } from 'fastify'
-import hahowService from "./services/hahow-hero.js";
+import hahowService from "./services/hahow-service.js";
 import authValidate from './auth-hook.js'
 
 async function heroRoutes(server: FastifyInstance) {

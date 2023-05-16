@@ -1,16 +1,10 @@
 import fastify, {
   FastifyReply,
   FastifyRequest,
-  FastifyInstance,
 } from "fastify";
 
 import heroRoutes from './hero-route.js'
-
-declare module "fastify" {
-  interface FastifyRequest {
-    isAuthUser: boolean;
-  }
-}
+import { addIsAuthUserPlugin } from './decorator.js'
 
 function buildServer() {
   const envToLogger = {
@@ -28,16 +22,18 @@ function buildServer() {
 
   const server = fastify({ logger: envToLogger["development"] ?? true });
 
-  server.get("/", async (request, reply) => {
+  server.get("/", async (request: FastifyRequest, reply: FastifyReply) => {
     return "Hero App\n";
   });
 
-  server.decorateRequest('isAuthUser', false)
+  // decorators
+  server.register(addIsAuthUserPlugin)
 
+  // routes
   server.register(heroRoutes);
 
   return server;
 }
 
-export default buildServer;
+export default buildServer
 
