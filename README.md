@@ -5,7 +5,7 @@
 #### clone the repo
 
 ```bash
-git clone git@github.com:genepg/hero-app.git
+git clone git@github.com:pgtagtoo/hero-app.git
 cd hero-app
 ```
 
